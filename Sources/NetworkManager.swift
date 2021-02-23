@@ -134,9 +134,7 @@ public extension NetworkManager {
         let rootDispersion = String(format: "%5.3f", responseObject?.rootDispersion.value ?? 0)
         return "\(trusty ? "↑" : "↓") [\(server)] stratum=\(stratum); offset=\(offset)±\(rootDispersion)mS"
     }
-}
 
-extension NetworkManager {
     static func ipAddrFromDomainName(_ domainName: String) -> [String]? {
         let unmanagedHost = CFHostCreateWithName(nil, domainName as CFString)
         let host = unmanagedHost.takeRetainedValue()
